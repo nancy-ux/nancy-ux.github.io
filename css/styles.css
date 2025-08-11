@@ -17,24 +17,10 @@ body {
 .hero {
   position: relative;
   height: 100vh; /* Full screen height */
-  background-image: url('/imgs/R.jpg'); /* Replace with your image path */
+  background-image: url('imgs/R.jpg'); /* Replace with your image path */
   background-size: cover; /* Ensure it covers the full area */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Don't repeat the image */
-  animation: backgroundAnimation 20s ease-in-out infinite; /* Animation for background change */
-}
-
-/* Animate background image with CSS */
-@keyframes backgroundAnimation {
-  0% {
-    background-image: url('imgs/R.jpg');
-  }
-  50% {
-    background-image: url('imgs/another-image.jpg'); /* Replace with another image for effect */
-  }
-  100% {
-    background-image: url('imgs/R.jpg');
-  }
 }
 
 /* Overlay for text readability */
@@ -49,33 +35,36 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: fadeIn 2s ease-out; /* Fade-in effect */
+  text-align: center; /* Default text alignment */
 }
 
-/* Text animation (fade-in) */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hero section text styling */
+/* Styling for the h1 element */
 h1 {
   font-size: 4rem;
   text-align: center;
-  animation: slideUp 1s ease-out; /* Text slide-up animation */
+  margin: 0;
+  line-height: 1.2;
 }
 
+/* Center the first part of the h1 text */
+.center-text {
+  display: block;
+}
+
+/* Right-align the second part of the h1 text */
+.right-text {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* Hero section text styling */
 p {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 20px;
-  animation: slideUp 1.5s ease-out; /* Text slide-up animation */
 }
 
 /* Button with animation on hover */
@@ -101,18 +90,6 @@ p {
 #about {
   padding: 40px;
   text-align: center;
-  animation: fadeInSection 2s ease-out;
-}
-
-@keyframes fadeInSection {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 #about h2 {
@@ -131,7 +108,6 @@ p {
   background-color: #333;
   color: #fff;
   text-align: center;
-  animation: fadeInSection 2s ease-out;
 }
 
 #portfolio h2 {
