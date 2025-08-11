@@ -17,7 +17,7 @@ body {
 .hero {
   position: relative;
   height: 100vh; /* Full screen height */
-  background-image: url('/imgs/R.jpg'); /* Replace with your image path */
+  background-image: url('imgs/R.jpg'); /* Replace with your image path */
   background-size: cover; /* Ensure it covers the full area */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Don't repeat the image */
@@ -53,9 +53,9 @@ h1 {
 
 /* Right-align the second part of the h1 text */
 .right-text {
-  display: block;
+  display: block; /* Force a line break */
   text-align: right;
-  margin-top: 10px;
+  margin-top: 10px; /* Space between the two parts */
   font-size: 1.2rem;
   line-height: 1.4;
 }
