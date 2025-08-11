@@ -5,13 +5,15 @@
   box-sizing: border-box;
 }
 
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #fff;
+  background-color: #222; /* Set a background color for better contrast */
 }
 
-/* Header background */
+/* Header background with animation */
 .hero {
   position: relative;
   height: 100vh; /* Full screen height */
@@ -19,77 +21,131 @@ body {
   background-size: cover; /* Ensure it covers the full area */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Don't repeat the image */
+  animation: backgroundAnimation 20s ease-in-out infinite; /* Animation for background change */
 }
 
+/* Animate background image with CSS */
+@keyframes backgroundAnimation {
+  0% {
+    background-image: url('imgs/R.jpg');
+  }
+  50% {
+    background-image: url('imgs/another-image.jpg'); /* Replace with another image for effect */
+  }
+  100% {
+    background-image: url('imgs/R.jpg');
+  }
+}
+
+/* Overlay for text readability */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Add a dark overlay for text visibility */
-  color: #fff;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text visibility */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  animation: fadeIn 2s ease-out; /* Fade-in effect */
 }
 
+/* Text animation (fade-in) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero section text styling */
 h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  text-align: center;
+  animation: slideUp 1s ease-out; /* Text slide-up animation */
 }
 
 p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: slideUp 1.5s ease-out; /* Text slide-up animation */
+}
+
+/* Button with animation on hover */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
   font-size: 1.2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #ff5733;
+}
+
+/* About section */
+#about {
+  padding: 40px;
+  text-align: center;
+  animation: fadeInSection 2s ease-out;
+}
+
+@keyframes fadeInSection {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about h2 {
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.btn {
-  padding: 10px 20px;
-  background-color: #ff6600;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+#about p {
+  font-size: 1.5rem;
+  color: #ddd;
 }
 
-.btn:hover {
-  background-color: #e55d00;
-}
-
-/* About Section */
-#about {
-  padding: 50px 20px;
-  background-color: #f4f4f4;
-  color: #333;
-  text-align: center;
-}
-
-/* Portfolio Section */
+/* Portfolio section */
 #portfolio {
-  padding: 50px 20px;
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  padding: 20px;
+  padding: 40px;
   background-color: #333;
   color: #fff;
   text-align: center;
+  animation: fadeInSection 2s ease-out;
 }
 
-footer a {
-  color: #ff6600;
-  text-decoration: none;
+#portfolio h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+footer p {
+  font-size: 1.2rem;
 }
