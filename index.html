@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nancy's Website</title>
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for image gallery -->
 </head>
 <body>
   <header class="hero">
@@ -44,33 +45,59 @@
 </section>
 
 <section id="portfolio">
-  <h2>My Life</h2>
-
-  <!-- Work Section -->
-  <div class="work">
-    <h3>Work</h3>
-    <p>This section will highlight my professional experiences and projects.</p>
-    <!-- Add content or links to your work here -->
+  <h2>My Work</h2>
+  
+  <!-- Flex container for the three sections -->
+  <div class="portfolio-container">
+    
+    <!-- Work Section -->
+    <div class="portfolio-item" id="work">
+      <h3>Work</h3>
+      <p>This section will highlight my professional experiences and projects.</p>
+      <img src="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png" alt="Work Image" class="portfolio-image" data-full-size="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png">
+    </div>
+  
+    <!-- Volunteer Section -->
+    <div class="portfolio-item" id="volunteer">
+      <h3>Volunteer</h3>
+      <p>This section will cover my volunteering experiences and the causes I care about.</p>
+      <img src="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png" alt="Volunteer Image" class="portfolio-image" data-full-size="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png">
+    </div>
+  
+    <!-- Hobby Section -->
+    <div class="portfolio-item" id="hobby">
+      <h3>Hobby (Draw & Music)</h3>
+      <p>This section will showcase my interests in drawing and music.</p>
+      <img src="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png" alt="Hobby Image" class="portfolio-image" data-full-size="/mnt/data/46E2EC3D-D1E6-4ABE-9D2A-5731E9CC77B2.png">
+    </div>
   </div>
-
-  <!-- Volunteer Section -->
-  <div class="volunteer">
-    <h3>Volunteer</h3>
-    <p>This section will cover my volunteering experiences and the causes I care about.</p>
-    <!-- Add content or links to your volunteer work here -->
-  </div>
-
-  <!-- Hobby Section -->
-  <div class="hobby">
-    <h3>Hobby (Draw & Music)</h3>
-    <p>This section will showcase my interests in drawing and music.</p>
-    <!-- Add content or links to your hobbies here -->
-  </div>
-
 </section>
 
 <footer>
   <p>Contact: <a href="mailto:your_email@example.com">2997474129@qq.com</a></p>
 </footer>
+
+<!-- Modal for displaying larger images -->
+<div id="image-modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
+
+<script>
+  $(document).ready(function(){
+    // Open modal when image is clicked
+    $('.portfolio-image').click(function() {
+      var imgSrc = $(this).data('full-size');
+      $('#modal-img').attr('src', imgSrc);
+      $('#image-modal').show();
+    });
+    
+    // Close the modal when the close button is clicked
+    $('.close').click(function() {
+      $('#image-modal').hide();
+    });
+  });
+</script>
+
 </body>
 </html>
