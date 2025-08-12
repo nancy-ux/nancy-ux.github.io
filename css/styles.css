@@ -156,6 +156,28 @@ p {
 #portfolio h2 {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: #ff7f50;
+}
+
+#portfolio .work, #portfolio .volunteer, #portfolio .hobby {
+  background-color: #444;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#portfolio h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#portfolio p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 footer {
