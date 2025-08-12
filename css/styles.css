@@ -1,10 +1,3 @@
-/* Reset some default styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* General body styling */
 body {
   font-family: Arial, sans-serif;
@@ -86,66 +79,7 @@ p {
   background-color: #ff5733;
 }
 
-/* General About Section */
-#about {
-  padding: 40px;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  border-radius: 10px;
-  max-width: 800px;
-  margin: 50px auto;
-  line-height: 1.8;
-}
-
-#about h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #ff7f50;
-}
-
-#about p {
-  font-size: 1.4rem;
-  color: #ddd;
-  margin-bottom: 20px;
-}
-
-#about strong {
-  font-weight: bold;
-  color: #ff7f50;
-}
-
-/* List styling for Ideal Life */
-.ideal-life ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 20px;
-}
-
-.ideal-life ul li {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  line-height: 1.6;
-  text-align: left;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ideal-life ul li:before {
-  content: "•";
-  color: #ff7f50; /* Bullet color */
-  font-size: 1.5rem;
-  margin-right: 10px;
-}
-
-#about p:last-child {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-top: 40px;
-}
-
-/* Portfolio section */
+/* Portfolio Section */
 #portfolio {
   padding: 40px;
   background-color: #333;
@@ -159,34 +93,67 @@ p {
   color: #ff7f50;
 }
 
-#portfolio .work, #portfolio .volunteer, #portfolio .hobby {
-  background-color: #444;
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+/* Flex container for portfolio items */
+.portfolio-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
 }
 
-#portfolio h3 {
+.portfolio-item {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.portfolio-item h3 {
   font-size: 2rem;
   margin-bottom: 15px;
 }
 
-#portfolio p {
+.portfolio-item p {
   font-size: 1.2rem;
-  line-height: 1.6;
   color: #ddd;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #222;
-  color: #fff;
+/* Modal for larger image view */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-footer p {
-  font-size: 1.2rem;
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
